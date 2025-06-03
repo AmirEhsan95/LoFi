@@ -147,7 +147,6 @@ if config.train:
         t1 = time()
         
         loss_epoch = 0
-        iter = 0
 
         for clean_image, corrupted_image in train_loader:
 

@@ -1,6 +1,7 @@
 import numpy as np
 import torch
 device = torch.device('cuda:0')
+task = 'LDCT'  # 'denoising' or 'mass' (dark matter mapping) or 'LDCT
 epochs = 200 # number of epochs to train MLPatch network
 object_batch_size = 64 # The number of images to be used in each training iterations
 pixel_batch_size_train = 512 # Number of pixels of each image to be used in each training iteration
@@ -15,7 +16,6 @@ network = 'MultiMLP' # The network can be a 'MultiMLP' or 'MLP'
 hidden_dim = 370 # Dimension of hidden layers
 num_layers = 3 # Number of hidden layers
 residual_learning = False # residula learning after the last layer
-task = 'LDCT'  # 'denoising' or 'mass' (dark matter mapping) or 'LDCT
 N = 9 # Number of chunks
 M = 9 # Number of layers
 patch_shape = 'round' # 'round' or 'square' 
