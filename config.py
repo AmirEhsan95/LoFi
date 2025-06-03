@@ -1,12 +1,12 @@
 import numpy as np
 import torch
-device = torch.device('cuda:3')
+device = torch.device('cuda:0')
 epochs = 200 # number of epochs to train MLPatch network
 object_batch_size = 64 # The number of images to be used in each training iterations
 pixel_batch_size_train = 512 # Number of pixels of each image to be used in each training iteration
 pixel_batch_size_inference = 64*64
 num_iterations_per_image_batch = 3 # The number of training iterations over randomly selected pixels from each batch images
-exp_desc = 'noise_0.15' # Add a small descriptor to the experiment
+exp_desc = 'base' # Add a small descriptor to the experiment
 image_size = 128 # Image resolution
 train = True # Train or just reload to test
 restore = False # Reload the exisiting 
@@ -15,7 +15,7 @@ network = 'MultiMLP' # The network can be a 'MultiMLP' or 'MLP'
 hidden_dim = 370 # Dimension of hidden layers
 num_layers = 3 # Number of hidden layers
 residual_learning = False # residula learning after the last layer
-task = 'denoising'  # 'denoising' or 'mass' (dark matter mapping) or 'LDCT
+task = 'LDCT'  # 'denoising' or 'mass' (dark matter mapping) or 'LDCT
 N = 9 # Number of chunks
 M = 9 # Number of layers
 patch_shape = 'round' # 'round' or 'square' 
@@ -30,7 +30,18 @@ n_deform = 3 # Number of CCPG blocks (T in the manuscript)
 coord_deform = False # Attaching INR to LoFi to transform the coordinate system
 plot_per_num_epoch = 10 # Run the inference code per epochs
 
-if task == 'denoising':
+
+
+if task == 'LDCT':
+    data = 'Chest'
+    c_in = c_out = 1
+    train_path = 'datasets/CT/128_180_complete_30/train'
+    test_path = 'datasets/CT/128_180_complete_30/test'
+    ood_path = 'datasets/CT/128_180_complete_30/outlier'
+    cmap = 'gray'
+
+
+elif task == 'denoising':
     noise_level = 0.15
     data = 'celeba-hq'
 
@@ -69,13 +80,6 @@ elif task == 'mass':
     test_path = 'datasets/kappaTNG/test_data/'
     cmap = 'inferno'
 
-elif task == 'LDCT':
-    data = 'Chest'
-    c_in = c_out = 1
-    train_path = 'datasets/CT/128_180_complete_30/train'
-    test_path = 'datasets/CT/128_180_complete_30/test'
-    ood_path = 'datasets/CT/128_180_complete_30/outlier'
-    cmap = 'gray'
 
 
 elif task == 'transpose':
