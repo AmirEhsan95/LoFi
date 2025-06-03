@@ -10,7 +10,7 @@ This repository is the official Pytorch implementation of "LoFi: Neural Local Fi
 
 
 <p float="center">
-<img src="figures/LoFi.jp2" width="1000">
+<img src="figures/LoFi.jpg" width="1000">
 </p>
 
 
