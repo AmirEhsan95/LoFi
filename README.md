@@ -2,11 +2,11 @@
 
 [![Paper](https://img.shields.io/badge/arxiv-report-red)](https://arxiv.org/abs/2411.04995)
 [![PWC](https://img.shields.io/badge/PWC-report-blue)](https://paperswithcode.com/paper/lofi-scalable-local-image-reconstruction-with)
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1gDVtX6LmV8fo1AnvZHm-HGgQ6cXfXAEY?usp=sharing)
+<!-- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1gDVtX6LmV8fo1AnvZHm-HGgQ6cXfXAEY?usp=sharing) -->
 
 This repository is the official Pytorch implementation of "LoFi: Neural Local Fields for Scalable Image Reconstruction". 
 
-[Colab demo](https://colab.research.google.com/drive/1gDVtX6LmV8fo1AnvZHm-HGgQ6cXfXAEY?usp=sharing)
+<!-- [Colab demo](https://colab.research.google.com/drive/1gDVtX6LmV8fo1AnvZHm-HGgQ6cXfXAEY?usp=sharing) -->
 
 
 <p float="center">
